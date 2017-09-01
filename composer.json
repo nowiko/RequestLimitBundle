@@ -1,0 +1,25 @@
+{
+  "name" : "nv/post-request-limit-bundle",
+  "type" : "symfony-bundle",
+  "description" : "",
+  "keywords" : [
+    "POST",
+    "Symfony3",
+    "Request",
+    "Restrict"
+  ],
+  "homepage": "https://github.com/NovikovViktor/PostRequestLimitBundle",
+  "license": "MIT",
+  "authors" : [
+    {
+      "name" : "Viktor Novikov"
+    }
+  ],
+  "require" : {
+    "php": ">=5.5.9",
+    "symfony/framework-bundle": ">=3.0"
+  },
+  "autoload" : {
+    "psr-4" : { "NV\\PostRequestLimitBundle\\" : "" }
+  }
+}
