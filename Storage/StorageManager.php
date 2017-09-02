@@ -1,6 +1,6 @@
 <?php
 
-namespace NV\PostRequestLimitBundle\Storage;
+namespace NV\RequestLimitBundle\Storage;
 
 
 class StorageManager

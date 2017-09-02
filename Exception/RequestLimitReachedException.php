@@ -1,6 +1,6 @@
 <?php
 
-namespace NV\PostRequestLimitBundle\Exception;
+namespace NV\RequestLimitBundle\Exception;
 
 use Throwable;
 

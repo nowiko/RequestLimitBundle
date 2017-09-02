@@ -1,8 +1,8 @@
 <?php
 
-namespace NV\PostRequestLimitBundle\Utils;
+namespace NV\RequestLimitBundle\Utils;
 
-use NV\PostRequestLimitBundle\Exception\RequestLimitReachedException;
+use NV\RequestLimitBundle\Exception\RequestLimitReachedException;
 
 class RequestRestrictor
 {

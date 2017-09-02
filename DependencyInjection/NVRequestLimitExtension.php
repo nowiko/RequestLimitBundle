@@ -1,13 +1,13 @@
 <?php
 
-namespace NV\PostRequestLimitBundle\DependencyInjection;
+namespace NV\RequestLimitBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class NVPostRequestLimitExtension extends Extension
+class NVRequestLimitExtension extends Extension
 {
     /**
      * {@inheritdoc}

@@ -5,7 +5,13 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="nv.request_limit.request_restrictor" class="NV\RequestLimitBundle\Utils\RequestRestrictor">
+                <argument type="service" id="nv.request_limit.storage_manager" />
+        </service>
 
+        <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager">
+
+        </service>
     </services>
 
 </container>
