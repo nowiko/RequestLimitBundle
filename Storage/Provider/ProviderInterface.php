@@ -1,5 +1,7 @@
 <?php
 
+namespace NV\RequestLimitBundle\Storage\Provider;
+
 /**
  * Describes methods Provider class should contain
  */
