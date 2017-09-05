@@ -10,7 +10,14 @@ class StoragePass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        // TODO: Implement process() method.
+        $providerType            = $container->getParameter('nv_request_limit.provider_type');
+        $providerConfiguration   = $container->getParameter('nv_request_limit.provider_configuration');
+        $providerTypeServiceName = sprintf('nv.request_limit.%s.provider', $providerType);
+
+        $providerDefinition = $container->getDefinition($providerTypeServiceName);
+        $providerDefinition->addMethodCall('configure', [$providerConfiguration]);
+
+        $storageManagerDefinition = $container->getDefinition('nv.request_limit.storage_manager');
     }
 
 }

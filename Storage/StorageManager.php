@@ -7,10 +7,10 @@ class StorageManager
 {
     private $provider;
 
-    public function __construct()
+    public function setProvider($provider)
     {
+        $this->provider = $provider;
     }
-
 
     public function hasItem($key)
     {
