@@ -19,7 +19,9 @@ class NVRequestLimitExtension extends Extension
         $configuration = new Configuration();
 
         $config = $this->processConfiguration($configuration, $configs);
+        $providerType = $config['provider_type'];
+        $providerConfiguration = $config['provider_configuration'];
 
-//        var_dump($config);die;
+        var_dump($providerType);die;
     }
 }

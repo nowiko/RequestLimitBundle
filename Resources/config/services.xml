@@ -10,7 +10,10 @@
         </service>
 
         <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager">
+                <argument type="service" id="nv.request_limit.storage" />
+        </service>
 
+        <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider">
         </service>
     </services>
 
