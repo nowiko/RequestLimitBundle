@@ -8,6 +8,9 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class StoragePass implements CompilerPassInterface
 {
+    /**
+     * @param ContainerBuilder $container
+     */
     public function process(ContainerBuilder $container)
     {
         $providerType            = $container->getParameter('nv_request_limit.provider_type');
@@ -18,6 +21,6 @@ class StoragePass implements CompilerPassInterface
         $providerDefinition->addMethodCall('configure', [$providerConfiguration]);
 
         $storageManagerDefinition = $container->getDefinition('nv.request_limit.storage_manager');
+        $storageManagerDefinition->addMethodCall('setProvider', [$providerDefinition]);
     }
-
 }

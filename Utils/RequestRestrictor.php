@@ -3,9 +3,13 @@
 namespace NV\RequestLimitBundle\Utils;
 
 use NV\RequestLimitBundle\Exception\RequestLimitReachedException;
+use NV\RequestLimitBundle\Storage\StorageManager;
 
 class RequestRestrictor
 {
+    /**
+     * @var StorageManager
+     */
     private $storageManager;
 
     public function __construct($storageManager)
@@ -29,5 +33,7 @@ class RequestRestrictor
         }
 
         $this->storageManager->setItem($key);
+
+        return $this->storageManager->getItem($key);
     }
 }

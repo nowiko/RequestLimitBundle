@@ -16,12 +16,12 @@ class NVRequestLimitExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
-        $configuration = new Configuration();
-
-        $config = $this->processConfiguration($configuration, $configs);
-        $providerType = $config['provider_type'];
+        $configuration         = new Configuration();
+        $config                = $this->processConfiguration($configuration, $configs);
+        $providerType          = $config['provider_type'];
         $providerConfiguration = $config['provider_configuration'];
 
-        var_dump($providerType);die;
+        $container->setParameter('nv_request_limit.provider_type', $providerType);
+        $container->setParameter('nv_request_limit.provider_configuration', $providerConfiguration);
     }
 }
