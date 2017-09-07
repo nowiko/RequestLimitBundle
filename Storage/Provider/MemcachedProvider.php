@@ -12,11 +12,13 @@ class MemcachedProvider implements ProviderInterface
     private $_memcached;
 
     /**
-     * @param $memcachedHost
-     * @param $memcachedPort
+     * @param $configuration
      */
-    public function __construct($memcachedHost, $memcachedPort)
+    public function configure($configuration)
     {
+        $memcachedHost = $configuration['server'];
+        $memcachedPort = $configuration['port'];
+
         $_memcached = new \Memcached();
         $_memcached->addServer($memcachedHost, $memcachedPort);
     }
