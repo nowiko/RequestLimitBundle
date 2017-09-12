@@ -21,6 +21,7 @@ class MemcachedProvider implements ProviderInterface
 
         $_memcached = new \Memcached();
         $_memcached->addServer($memcachedHost, $memcachedPort);
+        $this->_memcached = $_memcached;
     }
 
     /**

@@ -19,12 +19,12 @@ class RequestRestrictor
 
     public function restrictPostRequestByIp($userIp)
     {
-        $this->restrictByKey($userIp);
+        return $this->restrictByKey($userIp);
     }
 
     public function restrictPostRequestByUserId($userId)
     {
-       $this->restrictByKey($userId);
+       return $this->restrictByKey($userId);
     }
 
     private function restrictByKey($key) {
