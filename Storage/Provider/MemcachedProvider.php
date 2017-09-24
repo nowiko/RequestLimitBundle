@@ -40,4 +40,11 @@ class MemcachedProvider implements ProviderInterface
         return $this->_memcached->set($key, $expiresAt, 60 * 60 * 24 * 30);
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function remove($key)
+    {
+        return $this->_memcached->delete($key);
+    }
 }

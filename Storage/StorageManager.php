@@ -29,7 +29,7 @@ class StorageManager
 
     public function setItem($key, $value = null)
     {
-        $value = $value ? : new \DateTime('now');
+        $value = $value ? : new \DateTime('+ 10 minutes');
         $this->provider->set($key, $value);
     }
 }

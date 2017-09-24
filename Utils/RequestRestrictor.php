@@ -12,21 +12,29 @@ class RequestRestrictor
      */
     private $storageManager;
 
-    public function __construct($storageManager)
+    /**
+     * @param StorageManager $storageManager
+     */
+    public function __construct(StorageManager $storageManager)
     {
         $this->storageManager = $storageManager;
     }
 
-    public function restrictPostRequestByIp($userIp)
+    public function restrictRequestByIp($userIp)
     {
         return $this->restrictByKey($userIp);
     }
 
-    public function restrictPostRequestByUserId($userId)
+    public function restrictRequestByUserId($userId)
     {
        return $this->restrictByKey($userId);
     }
 
+    /**
+     * @param $key
+     * @return mixed
+     * @throws RequestLimitReachedException
+     */
     private function restrictByKey($key) {
         if ($this->storageManager->hasItem($key)) {
             throw new RequestLimitReachedException();

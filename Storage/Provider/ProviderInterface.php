@@ -23,4 +23,12 @@ interface ProviderInterface
      * @return mixed
      */
     public function set($key, $expiresAt);
+
+    /**
+     * Remove item from storage by given key
+     *
+     * @param $key
+     * @return mixed
+     */
+    public function remove($key);
 }
