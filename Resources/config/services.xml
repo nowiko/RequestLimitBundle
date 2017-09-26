@@ -12,7 +12,12 @@
         <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager">
         </service>
 
+        <!-- Providers definitions below -->
         <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider">
+        </service>
+
+        <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
         </service>
     </services>
 
