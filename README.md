@@ -31,12 +31,10 @@ Installation
     }
 ```
 
-3) Configure bundle via `app/config/config.yml`:
-```yml
-nv_request_limit:
-    provider_type: # enter type here
-    provider_configuration: #enter configuration parameters according to choosen provider
-```
+3) Configure bundle according to provider you use:
+ - [Memcached](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/memcached.md)
+ - [MySQL](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/mysql.md)
+
 Usage
 =============
 
