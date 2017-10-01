@@ -12,7 +12,9 @@ class MySQLProvider implements ProviderInterface
      */
     private $_em;
 
-
+    /**
+     * @param EntityManager $em
+     */
     public function __construct($em)
     {
         $this->_em = $em;
@@ -61,6 +63,11 @@ class MySQLProvider implements ProviderInterface
      */
     public function remove($key)
     {
-        // @TODO implement
+        $connection = $this->_em->getConnection();
+        $statement = $connection->exec(
+            'DELETE FROM nv_request_limit_items WHERE item_key = :item_key'
+        );
+        $statement->bindParam('item_key', $key);
+        $connection->close();
     }
 }
