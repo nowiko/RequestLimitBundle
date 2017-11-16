@@ -20,11 +20,19 @@ class RequestRestrictor
         $this->storageManager = $storageManager;
     }
 
+    /**
+     * @param $userIp
+     * @return mixed
+     */
     public function restrictRequestByIp($userIp)
     {
         return $this->restrictByKey($userIp);
     }
 
+    /**
+     * @param $userId
+     * @return mixed
+     */
     public function restrictRequestByUserId($userId)
     {
        return $this->restrictByKey($userId);

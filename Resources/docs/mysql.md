@@ -7,4 +7,4 @@ nv_request_limit:
     provider_type: 'mysql'
 ```
 
-2) Create table by using command `php bin/console nv:request-limit:mysql-init`
+2) Create table for items by command `php bin/console nv:request-limit:mysql-init`

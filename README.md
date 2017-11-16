@@ -51,3 +51,10 @@ These will restrict user access to the action for 10 minutes.
 
 TODO
 =========
+1) Add info block for debugger
+
+2) Add ability for developer to define
+
+2) Write tests
+
+2) Add few more providers: Redis, MongoDB

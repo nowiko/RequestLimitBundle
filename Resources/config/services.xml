@@ -5,20 +5,22 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="nv.request_limit.restrictions_collector" class="NV\RequestLimitBundle\DataCollector\RestrictionsCollector">
+            <tag name="data_collector" template="NVRequestLimitBundle:DataCollector:restrictions"
+                 id="nv.request_limit.restrictions_collector"/>
+        </service>
+
         <service id="nv.request_limit.request_restrictor" class="NV\RequestLimitBundle\Utils\RequestRestrictor" public="true">
                 <argument type="service" id="nv.request_limit.storage_manager" />
         </service>
 
-        <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager">
-        </service>
+        <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager"/>
 
         <!-- Providers definitions below -->
-        <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider">
-        </service>
+        <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider"/>
 
         <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider">
             <argument type="service" id="doctrine.orm.default_entity_manager" />
         </service>
     </services>
-
 </container>
