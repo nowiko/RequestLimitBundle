@@ -31,4 +31,14 @@ interface ProviderInterface
      * @return mixed
      */
     public function remove($key);
+
+    /**
+     * @return array
+     */
+    public function fetchAllItems();
+
+    /**
+     * @return mixed
+     */
+    public function getItemsCount();
 }

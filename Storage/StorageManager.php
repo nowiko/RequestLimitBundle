@@ -48,9 +48,28 @@ class StorageManager
         $this->provider->set($key, $value->getTimestamp());
     }
 
+    /**
+     * @param $key
+     */
     public function removeItem($key)
     {
         $this->provider->remove($key);
+    }
+
+    /**
+     * @return int
+     */
+    public function getItemsCount()
+    {
+        return $this->provider->getItemsCount();
+    }
+
+    /**
+     * @return array
+     */
+    public function fetchAllItems()
+    {
+        return $this->provider->fetchAllItems();
     }
 
     /**

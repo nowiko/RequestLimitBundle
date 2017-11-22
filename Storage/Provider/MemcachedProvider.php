@@ -2,8 +2,6 @@
 
 namespace NV\RequestLimitBundle\Storage\Provider;
 
-use NV\RequestLimitBundle\Storage\Provider\ProviderInterface;
-
 class MemcachedProvider implements ProviderInterface
 {
     /**
@@ -46,5 +44,21 @@ class MemcachedProvider implements ProviderInterface
     public function remove($key)
     {
         return $this->_memcached->delete($key);
+    }
+
+    /**
+     * @return array
+     */
+    public function fetchAllItems()
+    {
+        return $this->_memcached->fetchAll();
+    }
+
+    /**
+     * @return int
+     */
+    public function getItemsCount()
+    {
+        return count($this->_memcached->fetchAll());
     }
 }

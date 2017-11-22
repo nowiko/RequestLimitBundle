@@ -3,7 +3,6 @@
 namespace NV\RequestLimitBundle\Storage\Provider;
 
 use Doctrine\ORM\EntityManager;
-use NV\RequestLimitBundle\Storage\Provider\ProviderInterface;
 
 class MySQLProvider implements ProviderInterface
 {
@@ -33,7 +32,7 @@ class MySQLProvider implements ProviderInterface
     public function get($key)
     {
         $connection = $this->_em->getConnection();
-        $statement = $connection->exec(
+        $statement  = $connection->exec(
     'SELECT expires_at FROM nv_request_limit_items
                WHERE item_key = :item_key'
         );
@@ -50,7 +49,7 @@ class MySQLProvider implements ProviderInterface
     public function set($key, $expiresAt)
     {
         $connection = $this->_em->getConnection();
-        $statement = $connection->exec(
+        $statement  = $connection->exec(
             'INSERT INTO nv_request_limit_items (item_key, expires_at) VALUES item_key = :item_key, expires_at = :expires_at'
         );
         $statement->bindParam('item_key', $key);
@@ -64,10 +63,32 @@ class MySQLProvider implements ProviderInterface
     public function remove($key)
     {
         $connection = $this->_em->getConnection();
-        $statement = $connection->exec(
-            'DELETE FROM nv_request_limit_items WHERE item_key = :item_key'
-        );
+        $statement  = $connection->exec('DELETE FROM nv_request_limit_items WHERE item_key = :item_key');
         $statement->bindParam('item_key', $key);
         $connection->close();
+    }
+
+    /**
+     * @return array
+     */
+    public function fetchAllItems()
+    {
+        $connection = $this->_em->getConnection();
+        $result     = $connection->executeQuery('SELECT * FROM nv_request_limit_items')->fetchAll();
+        $connection->close();
+
+        return $result;
+    }
+
+    /**
+     * @return int
+     */
+    public function getItemsCount()
+    {
+        $connection = $this->_em->getConnection();
+        $result     = $connection->executeQuery('SELECT COUNT(*) FROM nv_request_limit_items')->fetchColumn(0);
+        $connection->close();
+
+        return $result;
     }
 }
