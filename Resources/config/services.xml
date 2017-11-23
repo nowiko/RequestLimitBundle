@@ -14,7 +14,7 @@
         <!-- Providers definitions below -->
         <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider"/>
 
-        <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MySQLProvider">
+        <service id="nv.request_limit.mysql.provider" class="NV\RequestLimitBundle\Storage\Provider\MySQLProvider">
             <argument type="service" id="doctrine.orm.default_entity_manager" />
         </service>
 
