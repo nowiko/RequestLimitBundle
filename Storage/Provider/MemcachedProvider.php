@@ -59,6 +59,6 @@ class MemcachedProvider implements ProviderInterface
      */
     public function getItemsCount()
     {
-        return count($this->_memcached->fetchAll());
+        return count($this->fetchAllItems());
     }
 }

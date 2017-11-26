@@ -41,7 +41,7 @@
         {% for key, expires in collector.restrictions %}
             <tr>
                 <td>{{ type }}</td>
-                <td>{{ expires }}</td>
+                <td>{{ expires|date('d M Y h:i:s A') }}</td>
             </tr>
         {% endfor %}
     </table>

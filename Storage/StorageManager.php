@@ -10,7 +10,7 @@ class StorageManager
     /**
      * @var ProviderInterface
      */
-    private $provider;
+    public $provider;
 
     /**
      * @param $provider
