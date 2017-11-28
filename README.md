@@ -40,21 +40,17 @@ Usage
 
 In your controller action add following line to restrict user access by user id:
 ```php
-$this->get('nv.request_limit.request_restrictor')->restrictRequestByUserId($this->getUser()->getId());
+$this->get('nv.request_limit.request_restrictor')->restrictRequestByUserId($userId);
 ```
 or following to restrict by user IP:
 ```php
-$this->get('nv.request_limit.request_restrictor')->restrictRequestByIp();
+$this->get('nv.request_limit.request_restrictor')->restrictRequestByIp($userIp);
 ```
 
 These will restrict user access to the action for 10 minutes.
 
 TODO
 =========
-1) Add info block for debugger
-
-2) Add ability for developer to define
+1) Add ability for developer to define restriction timing
 
 2) Write tests
-
-2) Add few more providers: Redis, MongoDB
