@@ -1,14 +1,15 @@
 {
   "name" : "nv/request-limit-bundle",
   "type" : "symfony-bundle",
-  "description" : "",
+  "description" : "The bundle which provides a light way to restrict user access to some action for a specific time frame",
   "keywords" : [
     "POST",
     "GET",
     "HTTP verbs",
     "Symfony3",
     "Request",
-    "Restrict"
+    "Restrict",
+    "Limitations"
   ],
   "homepage": "https://github.com/NovikovViktor/RequestLimitBundle",
   "license": "MIT",
@@ -20,6 +21,9 @@
   "require" : {
     "php": ">=5.5.9",
     "symfony/framework-bundle": ">=3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*.*"
   },
   "autoload" : {
     "psr-4" : { "NV\\RequestLimitBundle\\" : "" }
