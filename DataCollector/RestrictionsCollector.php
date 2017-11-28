@@ -9,6 +9,9 @@ use Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface;
 
 class RestrictionsCollector implements DataCollectorInterface
 {
+    /**
+     * @var array
+     */
     private $data;
 
     /** @var StorageManager $storageManager */
@@ -41,6 +44,9 @@ class RestrictionsCollector implements DataCollectorInterface
         return $this->data['restrictions'];
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return 'nv.request_limit.restrictions_collector';
