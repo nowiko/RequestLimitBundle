@@ -2,7 +2,6 @@
 
 namespace NV\RequestLimitBundle\Storage;
 
-
 use NV\RequestLimitBundle\Storage\Provider\ProviderInterface;
 
 class StorageManager
@@ -44,7 +43,7 @@ class StorageManager
      */
     public function setItem($key, $value = null)
     {
-        $value = $value ? : new \DateTime('+ 10 minutes');
+        $value = $value ?: new \DateTime('+ 10 minutes');
         $this->provider->set($key, $value->getTimestamp());
     }
 

@@ -1,4 +1,4 @@
-Configure usage of Memcached as Provider
+Configure usage of MySQL as Provider
 =============
 
 1) Configure `app/config/config.php`:

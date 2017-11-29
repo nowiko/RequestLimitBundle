@@ -59,4 +59,12 @@ class RestrictionsCollector implements DataCollectorInterface
     {
         $this->storageManager = $manager;
     }
+
+    /**
+     * @return array
+     */
+    function __sleep()
+    {
+        return ['data'];
+    }
 }

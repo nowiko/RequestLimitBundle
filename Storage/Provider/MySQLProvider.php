@@ -35,9 +35,9 @@ class MySQLProvider implements ProviderInterface
         $statement  = $connection->prepare('SELECT expires_at FROM nv_request_limit_items WHERE item_key = :item_key');
         $statement->bindValue('item_key', $key);
         $statement->execute();
-        $result = $statement->fetchAll(\PDO::FETCH_COLUMN);
+        $result     = $statement->fetchAll(\PDO::FETCH_COLUMN);
         $connection->close();
-        $date = \DateTime::createFromFormat('Y-m-d H:i:s', $result[0]);
+        $date       = \DateTime::createFromFormat('Y-m-d H:i:s', $result[0]);
 
         return $date->getTimestamp();
     }
@@ -65,6 +65,7 @@ class MySQLProvider implements ProviderInterface
         $connection = $this->_em->getConnection();
         $statement  = $connection->prepare('DELETE FROM nv_request_limit_items WHERE item_key = :item_key');
         $statement->bindValue('item_key', $key);
+        $statement->execute();
         $connection->close();
     }
 
@@ -74,7 +75,9 @@ class MySQLProvider implements ProviderInterface
     public function fetchAllItems()
     {
         $connection = $this->_em->getConnection();
-        $result     = $connection->prepare('SELECT * FROM nv_request_limit_items')->fetchAll();
+        $statement  = $connection->prepare('SELECT * FROM nv_request_limit_items');
+        $statement->execute();
+        $result     = $statement->fetchAll();
         $connection->close();
 
         return $result;
@@ -86,7 +89,9 @@ class MySQLProvider implements ProviderInterface
     public function getItemsCount()
     {
         $connection = $this->_em->getConnection();
-        $result     = $connection->prepare('SELECT COUNT(*) FROM nv_request_limit_items')->fetchColumn(0);
+        $statement  = $connection->prepare('SELECT COUNT(*) FROM nv_request_limit_items');
+        $statement->execute();
+        $result     = $statement->fetchColumn(0);
         $connection->close();
 
         return $result;
