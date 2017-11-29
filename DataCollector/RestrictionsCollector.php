@@ -63,7 +63,7 @@ class RestrictionsCollector implements DataCollectorInterface
     /**
      * @return array
      */
-    function __sleep()
+    public function __sleep()
     {
         return ['data'];
     }
