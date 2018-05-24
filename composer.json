@@ -1,5 +1,5 @@
 {
-  "name" : "nv/request-limit-bundle",
+  "name" : "sfh/request-limit-bundle",
   "type" : "symfony-bundle",
   "description" : "The bundle which provides a light way to restrict user access to some action for a specific time frame",
   "keywords" : [
