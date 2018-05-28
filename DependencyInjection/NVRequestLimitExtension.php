@@ -20,8 +20,10 @@ class NVRequestLimitExtension extends Extension
         $config                = $this->processConfiguration($configuration, $configs);
         $providerType          = $config['provider_type'];
         $providerConfiguration = $config['provider_configuration'];
+        $restrictionTime       = $config['restriction_time'];
 
         $container->setParameter('nv_request_limit.provider_type', $providerType);
         $container->setParameter('nv_request_limit.provider_configuration', $providerConfiguration);
+        $container->setParameter('nv_request_limit.restriction_time', $restrictionTime);
     }
 }

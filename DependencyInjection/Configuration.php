@@ -17,6 +17,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->integerNode('restriction_time')->end()
                 ->scalarNode('provider_type')->end()
                 ->arrayNode('provider_configuration')
                     ->prototype('scalar')

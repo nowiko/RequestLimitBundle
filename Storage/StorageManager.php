@@ -12,6 +12,19 @@ class StorageManager
     public $provider;
 
     /**
+     * @var integer
+     */
+    private $restrictionTime;
+
+    /**
+     * @param $restrictionTime
+     */
+    public function __construct($restrictionTime)
+    {
+        $this->restrictionTime = $restrictionTime;
+    }
+
+    /**
      * @param $provider
      */
     public function setProvider(ProviderInterface $provider)
@@ -43,7 +56,7 @@ class StorageManager
      */
     public function setItem($key, $value = null)
     {
-        $value = $value ?: new \DateTime('+ 10 minutes');
+        $value = $value ?: new \DateTime("+{$this->restrictionTime} seconds");
         $this->provider->set($key, $value->getTimestamp());
     }
 
