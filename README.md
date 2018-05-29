@@ -35,6 +35,12 @@ Installation
  - [Memcached](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/memcached.md)
  - [MySQL](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/mysql.md)
 
+4) Specify `restriction_time` in seconds:
+```yml
+nv_request_limit:
+    restriction_time: 5
+```
+
 Usage
 =============
 
@@ -51,6 +57,5 @@ These will restrict user access to the action for 10 minutes.
 
 TODO
 =========
-1) Add ability for developer to define restriction timing
 
-2) Write tests
+1) Write tests

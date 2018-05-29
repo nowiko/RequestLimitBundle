@@ -6,11 +6,12 @@
 
     <services>
         <service id="nv.request_limit.request_restrictor" class="NV\RequestLimitBundle\Utils\RequestRestrictor" public="true">
-                <argument type="service" id="nv.request_limit.storage_manager" />
+            <argument type="service" id="nv.request_limit.storage_manager" />
         </service>
 
-        <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager"/>
-
+        <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager">
+            <argument>%nv_request_limit.restriction_time%</argument>
+        </service>
         <!-- Providers definitions below -->
         <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider"/>
 

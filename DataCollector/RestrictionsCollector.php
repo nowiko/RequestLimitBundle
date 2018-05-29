@@ -67,4 +67,12 @@ class RestrictionsCollector implements DataCollectorInterface
     {
         return ['data'];
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function reset()
+    {
+        $this->data = [];
+    }
 }
