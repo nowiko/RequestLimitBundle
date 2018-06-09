@@ -36,6 +36,11 @@ class MySQLProvider implements ProviderInterface
         $statement->bindValue('item_key', $key);
         $statement->execute();
         $result     = $statement->fetchAll(\PDO::FETCH_COLUMN);
+
+        if (!$result) {
+            return null;
+        }
+
         $connection->close();
         $date       = \DateTime::createFromFormat('Y-m-d H:i:s', $result[0]);
 
