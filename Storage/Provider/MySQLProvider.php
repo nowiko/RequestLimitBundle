@@ -27,7 +27,9 @@ class MySQLProvider implements ProviderInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
+     *
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function get($key)
     {
@@ -48,7 +50,9 @@ class MySQLProvider implements ProviderInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
+
+     * @throws \Doctrine\DBAL\DBALException
      */
     public function set($key, $expiresAt)
     {

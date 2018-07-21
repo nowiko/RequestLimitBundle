@@ -23,6 +23,7 @@ class RequestRestrictor
     /**
      * @param $userIp
      * @return mixed
+     * @throws RequestLimitReachedException
      */
     public function restrictRequestByIp($userIp)
     {
@@ -32,6 +33,7 @@ class RequestRestrictor
     /**
      * @param $userId
      * @return mixed
+     * @throws RequestLimitReachedException
      */
     public function restrictRequestByUserId($userId)
     {
