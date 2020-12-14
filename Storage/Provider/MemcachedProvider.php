@@ -2,10 +2,17 @@
 
 namespace NV\RequestLimitBundle\Storage\Provider;
 
+use \Memcached;
+
+/**
+ * Class MemcachedProvider
+ * @package NV\RequestLimitBundle\Storage\Provider
+ * @author Novikov Viktor
+ */
 class MemcachedProvider implements ProviderInterface
 {
     /**
-     * @var \Memcached $_memcached
+     * @var Memcached $_memcached
      */
     private $_memcached;
 
@@ -16,8 +23,7 @@ class MemcachedProvider implements ProviderInterface
     {
         $memcachedHost = $configuration['server'];
         $memcachedPort = $configuration['port'];
-
-        $_memcached = new \Memcached();
+        $_memcached = new Memcached();
         $_memcached->addServer($memcachedHost, $memcachedPort);
         $this->_memcached = $_memcached;
     }
@@ -27,7 +33,7 @@ class MemcachedProvider implements ProviderInterface
      */
     public function get($key)
     {
-       return $this->_memcached->get($key);
+        return $this->_memcached->get($key);
     }
 
     /**

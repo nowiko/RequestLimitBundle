@@ -1,0 +1,6 @@
+restrictions:
+  count: 'Restrictions count'
+  limit: 'Request Limit'
+  total: 'Total count'
+  key: 'Key'
+  expires: 'Expires'

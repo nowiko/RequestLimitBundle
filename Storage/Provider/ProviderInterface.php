@@ -3,10 +3,19 @@
 namespace NV\RequestLimitBundle\Storage\Provider;
 
 /**
- * Describes methods Provider class should contain
+ * Interface ProviderInterface
+ * @package NV\RequestLimitBundle\Storage\Provider
+ * @author Novikov Viktor
  */
 interface ProviderInterface
 {
+    /**
+     * Used to configure provider with options, defined in the bundle configuration
+     *
+     * @param array $configuration
+     */
+    public function configure($configuration);
+
     /**
      * Fetch item from storage by key
      *

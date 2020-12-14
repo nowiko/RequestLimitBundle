@@ -7,6 +7,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface;
 
+/**
+ * Class RestrictionsCollector
+ * @package NV\RequestLimitBundle\DataCollector
+ * @author Novikov Viktor
+ */
 class RestrictionsCollector implements DataCollectorInterface
 {
     /**
@@ -18,7 +23,7 @@ class RestrictionsCollector implements DataCollectorInterface
     private $storageManager;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
@@ -69,7 +74,7 @@ class RestrictionsCollector implements DataCollectorInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function reset()
     {

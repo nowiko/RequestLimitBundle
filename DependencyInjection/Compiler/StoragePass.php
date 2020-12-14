@@ -5,9 +5,16 @@ namespace NV\RequestLimitBundle\DependencyInjection\Compiler;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
+/**
+ * Class StoragePass
+ * @package NV\RequestLimitBundle\DependencyInjection\Compiler
+ * @author Novikov Viktor
+ */
 class StoragePass implements CompilerPassInterface
 {
     /**
+     * {@inheritdoc}
+     *
      * @param ContainerBuilder $container
      */
     public function process(ContainerBuilder $container)

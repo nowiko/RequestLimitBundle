@@ -4,6 +4,11 @@ namespace NV\RequestLimitBundle\Storage;
 
 use NV\RequestLimitBundle\Storage\Provider\ProviderInterface;
 
+/**
+ * Class StorageManager
+ * @package NV\RequestLimitBundle\Storage
+ * @author Novikov Viktor
+ */
 class StorageManager
 {
     /**
@@ -38,7 +43,7 @@ class StorageManager
      */
     public function hasItem($key)
     {
-        return ($this->provider->get($key) && $this->stillRestricted($key)) ? true : false;
+        return ($this->provider->get($key) && $this->stillRestricted($key));
     }
 
     /**
