@@ -44,7 +44,7 @@ class RestrictorTest extends \PHPUnit_Framework_TestCase
      */
     private function getStorageManagerMock($item = 'userId', $hasItem = false)
     {
-        $storageManager = $this->getMock(
+        $storageManager = $this->createMock(
             StorageManager::class,
             [],
             [],
