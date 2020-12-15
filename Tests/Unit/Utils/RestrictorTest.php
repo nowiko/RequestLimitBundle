@@ -5,14 +5,13 @@ namespace NV\RequestLimitBundle\Tests\Unit\Utils;
 use NV\RequestLimitBundle\Exception\RequestLimitReachedException;
 use NV\RequestLimitBundle\Storage\StorageManager;
 use NV\RequestLimitBundle\Utils\Restrictor;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * Class RestrictorTest
  * @package NV\RequestLimitBundle\Tests\Unit\Utils
  * @author Novikov Viktor
  */
-class RestrictorTest extends WebTestCase
+class RestrictorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Successful behavior of 'blockBy' method - setting user identifier as block artifact for the first time

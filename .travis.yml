@@ -9,9 +9,8 @@ php:
 
 before_script:
   - phpenv config-add .travis-memcached.ini
-  - phpenv config-add .travis-pdo.ini
   - composer self-update
   - composer install
 
 script:
-  - phpunit
+  - /vendor/bin/phpunit
