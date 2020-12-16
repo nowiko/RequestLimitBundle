@@ -1,14 +1,14 @@
 <?php
 
-namespace NV\RequestLimitBundle\Tests\Unit\Utils;
+namespace NW\RequestLimitBundle\Tests\Unit\Utils;
 
-use NV\RequestLimitBundle\Exception\RequestLimitReachedException;
-use NV\RequestLimitBundle\Storage\StorageManager;
-use NV\RequestLimitBundle\Utils\Restrictor;
+use NW\RequestLimitBundle\Exception\RequestLimitReachedException;
+use NW\RequestLimitBundle\Storage\StorageManager;
+use NW\RequestLimitBundle\Utils\Restrictor;
 
 /**
  * Class RestrictorTest
- * @package NV\RequestLimitBundle\Tests\Unit\Utils
+ * @package NW\RequestLimitBundle\Tests\Unit\Utils
  * @author Novikov Viktor
  */
 class RestrictorTest extends \PHPUnit_Framework_TestCase

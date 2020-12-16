@@ -15,7 +15,7 @@ Installation
 
 1) Install package via:
 ```bash
-    composer require nv/request-limit-bundle
+    composer require nw/request-limit-bundle
 ```
 
 2) Register bundle :
@@ -26,7 +26,7 @@ public function registerBundles()
 {
     $bundles = [
         // ... ,
-        new NV\RequestLimitBundle\NVRequestLimitBundle()
+        new NW\RequestLimitBundle\NWRequestLimitBundle()
     ];
 
     // ...
@@ -38,7 +38,7 @@ In `config/bundles.php` when Symfony version is `4.0` and higher
 ```php
 return [
     //... other bundles
-    NV\RequestLimitBundle\NVRequestLimitBundle::class => ['all' => true]
+    NW\RequestLimitBundle\NWRequestLimitBundle::class => ['all' => true]
 ];
 ```
 
@@ -52,7 +52,7 @@ If you want to use other storage, you can implement your provider.
 
 4) Specify `restriction_time` in seconds:
 ```yml
-nv_request_limit:
+nw_request_limit:
     #... options for provider configuration
     restriction_time: 5  # 5 seconds
 ```
@@ -63,7 +63,7 @@ Usage
 In your action, add the following line to restrict access by some specific application user artifact (e.g., user id, user IP, etc.):
 ```php
 $artifact = 'e.g. get user id or IP here';
-$this->get('nv.request_limit.restrictor')->blockBy($artifact);
+$this->get('nw.request_limit.restrictor')->blockBy($artifact);
 ```
 
 These will restrict user access for a time frame specified in your configuration (5 seconds accordingly to).

@@ -5,28 +5,28 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="nv.request_limit.restrictor" class="NV\RequestLimitBundle\Utils\Restrictor" public="true">
-            <argument type="service" id="nv.request_limit.storage_manager" />
+        <service id="nw.request_limit.restrictor" class="NW\RequestLimitBundle\Utils\Restrictor" public="true">
+            <argument type="service" id="nw.request_limit.storage_manager" />
         </service>
 
-        <service id="nv.request_limit.storage_manager" class="NV\RequestLimitBundle\Storage\StorageManager">
-            <argument>%nv_request_limit.restriction_time%</argument>
+        <service id="nw.request_limit.storage_manager" class="NW\RequestLimitBundle\Storage\StorageManager">
+            <argument>%nw_request_limit.restriction_time%</argument>
         </service>
 
         <!-- Providers definitions below -->
-        <service id="nv.request_limit.memcached.provider" class="NV\RequestLimitBundle\Storage\Provider\MemcachedProvider"/>
+        <service id="nw.request_limit.memcached.provider" class="NW\RequestLimitBundle\Storage\Provider\MemcachedProvider"/>
 
-        <service id="nv.request_limit.mysql.provider" class="NV\RequestLimitBundle\Storage\Provider\MySQLProvider">
+        <service id="nw.request_limit.mysql.provider" class="NW\RequestLimitBundle\Storage\Provider\MySQLProvider">
             <argument type="service" id="doctrine.orm.default_entity_manager" on-invalid="ignore" />
         </service>
 
         <!-- Restrictions data collector -->
-        <service id="nv.request_limit.restrictions_collector" class="NV\RequestLimitBundle\DataCollector\RestrictionsCollector">
+        <service id="nw.request_limit.restrictions_collector" class="NW\RequestLimitBundle\DataCollector\RestrictionsCollector">
             <call method="setStorageManager">
-                <argument type="service" id="nv.request_limit.storage_manager" />
+                <argument type="service" id="nw.request_limit.storage_manager" />
             </call>
-            <tag name="data_collector" template="NVRequestLimitBundle:DataCollector:restrictions"
-                 id="nv.request_limit.restrictions_collector"/>
+            <tag name="data_collector" template="NWRequestLimitBundle:DataCollector:restrictions"
+                 id="nw.request_limit.restrictions_collector"/>
         </service>
     </services>
 </container>

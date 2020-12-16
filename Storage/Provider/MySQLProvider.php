@@ -1,6 +1,6 @@
 <?php
 
-namespace NV\RequestLimitBundle\Storage\Provider;
+namespace NW\RequestLimitBundle\Storage\Provider;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\DBAL\Driver\Exception as DriverException;
@@ -9,7 +9,7 @@ use \PDO;
 
 /**
  * Class MySQLProvider
- * @package NV\RequestLimitBundle\Storage\Provider
+ * @package NW\RequestLimitBundle\Storage\Provider
  * @author Novikov Viktor
  */
 class MySQLProvider implements ProviderInterface
@@ -44,7 +44,7 @@ class MySQLProvider implements ProviderInterface
     public function get($key)
     {
         $connection = $this->_em->getConnection();
-        $statement = $connection->prepare('SELECT expires_at FROM nv_request_limit_items WHERE item_key = :item_key');
+        $statement = $connection->prepare('SELECT expires_at FROM nw_request_limit_items WHERE item_key = :item_key');
         $statement->bindValue('item_key', $key);
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_COLUMN);
@@ -69,7 +69,7 @@ class MySQLProvider implements ProviderInterface
     {
         $connection = $this->_em->getConnection();
         $statement = $connection->prepare(
-            'INSERT INTO nv_request_limit_items (item_key, expires_at) VALUES (:item_key, :expires_at);'
+            'INSERT INTO nw_request_limit_items (item_key, expires_at) VALUES (:item_key, :expires_at);'
         );
         $statement->bindValue('item_key', $key);
         $statement->bindValue('expires_at', date('Y-m-d H:i:s', $expiresAt));
@@ -86,7 +86,7 @@ class MySQLProvider implements ProviderInterface
     public function remove($key)
     {
         $connection = $this->_em->getConnection();
-        $statement = $connection->prepare('DELETE FROM nv_request_limit_items WHERE item_key = :item_key');
+        $statement = $connection->prepare('DELETE FROM nw_request_limit_items WHERE item_key = :item_key');
         $statement->bindValue('item_key', $key);
         $statement->execute();
         $connection->close();
@@ -101,7 +101,7 @@ class MySQLProvider implements ProviderInterface
     public function fetchAllItems()
     {
         $connection = $this->_em->getConnection();
-        $statement = $connection->prepare('SELECT * FROM nv_request_limit_items');
+        $statement = $connection->prepare('SELECT * FROM nw_request_limit_items');
         $statement->execute();
         $result = $statement->fetchAll();
         $connection->close();
@@ -118,7 +118,7 @@ class MySQLProvider implements ProviderInterface
     public function getItemsCount()
     {
         $connection = $this->_em->getConnection();
-        $statement = $connection->prepare('SELECT COUNT(*) FROM nv_request_limit_items');
+        $statement = $connection->prepare('SELECT COUNT(*) FROM nw_request_limit_items');
         $statement->execute();
         $result = $statement->fetchColumn(0);
         $connection->close();

@@ -1,12 +1,12 @@
 <?php
 
-namespace NV\RequestLimitBundle\Storage;
+namespace NW\RequestLimitBundle\Storage;
 
-use NV\RequestLimitBundle\Storage\Provider\ProviderInterface;
+use NW\RequestLimitBundle\Storage\Provider\ProviderInterface;
 
 /**
  * Class StorageManager
- * @package NV\RequestLimitBundle\Storage
+ * @package NW\RequestLimitBundle\Storage
  * @author Novikov Viktor
  */
 class StorageManager

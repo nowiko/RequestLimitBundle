@@ -1,10 +1,10 @@
 <?php
 
-namespace NV\RequestLimitBundle\Storage\Provider;
+namespace NW\RequestLimitBundle\Storage\Provider;
 
 /**
  * Interface ProviderInterface
- * @package NV\RequestLimitBundle\Storage\Provider
+ * @package NW\RequestLimitBundle\Storage\Provider
  * @author Novikov Viktor
  */
 interface ProviderInterface

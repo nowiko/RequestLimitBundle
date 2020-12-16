@@ -1,12 +1,12 @@
 <?php
 
-namespace NV\RequestLimitBundle\Storage\Provider;
+namespace NW\RequestLimitBundle\Storage\Provider;
 
 use \Memcached;
 
 /**
  * Class MemcachedProvider
- * @package NV\RequestLimitBundle\Storage\Provider
+ * @package NW\RequestLimitBundle\Storage\Provider
  * @author Novikov Viktor
  */
 class MemcachedProvider implements ProviderInterface

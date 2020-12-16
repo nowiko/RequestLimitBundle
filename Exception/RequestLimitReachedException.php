@@ -1,12 +1,12 @@
 <?php
 
-namespace NV\RequestLimitBundle\Exception;
+namespace NW\RequestLimitBundle\Exception;
 
 use Throwable;
 
 /**
  * Class RequestLimitReachedException
- * @package NV\RequestLimitBundle\Exception
+ * @package NW\RequestLimitBundle\Exception
  * @author Novikov Viktor
  */
 class RequestLimitReachedException extends \Exception

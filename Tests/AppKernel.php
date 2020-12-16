@@ -16,7 +16,7 @@ class AppKernel extends Kernel
         $bundles = [];
         if (in_array($this->getEnvironment(), ['test'])) {
             $bundles[] = new Symfony\Bundle\FrameworkBundle\FrameworkBundle();
-            $bundles[] = new NV\RequestLimitBundle\NVRequestLimitBundle();
+            $bundles[] = new NW\RequestLimitBundle\NWRequestLimitBundle();
         }
         return $bundles;
     }

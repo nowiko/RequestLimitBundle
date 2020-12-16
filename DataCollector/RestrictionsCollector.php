@@ -1,15 +1,15 @@
 <?php
 
-namespace NV\RequestLimitBundle\DataCollector;
+namespace NW\RequestLimitBundle\DataCollector;
 
-use NV\RequestLimitBundle\Storage\StorageManager;
+use NW\RequestLimitBundle\Storage\StorageManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface;
 
 /**
  * Class RestrictionsCollector
- * @package NV\RequestLimitBundle\DataCollector
+ * @package NW\RequestLimitBundle\DataCollector
  * @author Novikov Viktor
  */
 class RestrictionsCollector implements DataCollectorInterface
@@ -54,7 +54,7 @@ class RestrictionsCollector implements DataCollectorInterface
      */
     public function getName()
     {
-        return 'nv.request_limit.restrictions_collector';
+        return 'nw.request_limit.restrictions_collector';
     }
 
     /**
