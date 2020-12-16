@@ -1,12 +1,12 @@
 {
-  "name" : "sfh/request-limit-bundle",
+  "name" : "nv/request-limit-bundle",
   "type" : "symfony-bundle",
-  "description" : "The bundle which provides a light way to restrict user access to some action for a specific time frame",
+  "description" : "This bundle provides a light way to restrict user access to some action for a specific time frame",
   "keywords" : [
     "POST",
     "GET",
     "HTTP verbs",
-    "Symfony3",
+    "Symfony",
     "Request",
     "Restrict",
     "Limitations"
@@ -19,15 +19,19 @@
     }
   ],
   "require" : {
-    "php": ">=5.5.9",
+    "php": "^7",
+    "ext-memcached": "*",
+    "ext-pdo": "*",
     "symfony/symfony": ">=3.0",
     "doctrine/common": "~2.4"
   },
   "require-dev": {
+    "phpspec/phpspec": "*",
+    "friendsofphp/php-cs-fixer": "*",
     "doctrine/dbal": "~2.4",
     "doctrine/orm": "~2.4,>=2.4.5",
     "doctrine/doctrine-bundle": "~1.4",
-    "phpunit/phpunit": "4.*.*"
+    "phpunit/phpunit": "~5.0"
   },
   "autoload" : {
     "psr-4" : { "NV\\RequestLimitBundle\\" : "" }

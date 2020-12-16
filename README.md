@@ -6,56 +6,64 @@ RequestLimitBundle
 This bundle is a simple solution to restrict user access
 to some controller for a specified timeline.
 
-This could be used for different cases when you need to pre
-
+This functionality could be used for different cases when you need to:
 - prevent flood - pushing users of irrelevant data;
-- prevent user to visit page very often, etc.
+- prevent a user from accessing the certain endpoint very often, etc.
 
 Installation
 =============
 
-1) Require bundle with:
+1) Install package via:
 ```bash
-    composer require 
+    composer require nv/request-limit-bundle
 ```
 
-2) Register bundle in AppKernel:
+2) Register bundle :
+
+In `app/AppKernel.php` prior to Symfony version `4.0`:
 ```php
- public function registerBundles()
-    {
-        $bundles = [
-            ... ,
-            new NV\RequestLimitBundle\NVRequestLimitBundle()
-        ];
-    ...
-    }
+public function registerBundles()
+{
+    $bundles = [
+        // ... ,
+        new NV\RequestLimitBundle\NVRequestLimitBundle()
+    ];
+
+    // ...
+    return $bundles;
+}
 ```
 
-3) Configure bundle according to provider you use:
- - [Memcached](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/memcached.md)
- - [MySQL](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/mysql.md)
+In `config/bundles.php` when Symfony version is `4.0` and higher
+```php
+return [
+    //... other bundles
+    NV\RequestLimitBundle\NVRequestLimitBundle::class => ['all' => true]
+];
+```
+
+3) Configure the bundle according to the provider you would like to use.
+Out of the box, we provide the Memcached and MySQL providers. To see configuration options, see the docs below.
+   
+ - [Memcached provider configuration](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/memcached.md)
+ - [MySQL provider configuration](https://github.com/NovikovViktor/RequestLimitBundle/blob/master/Resources/docs/mysql.md)
+
+If you want to use other storage, you can implement your provider.
 
 4) Specify `restriction_time` in seconds:
 ```yml
 nv_request_limit:
-    restriction_time: 5
+    #... options for provider configuration
+    restriction_time: 5  # 5 seconds
 ```
 
 Usage
 =============
 
-In your controller action add following line to restrict user access by user id:
+In your action, add the following line to restrict access by some specific application user artifact (e.g., user id, user IP, etc.):
 ```php
-$this->get('nv.request_limit.request_restrictor')->restrictRequestByUserId($userId);
-```
-or following to restrict by user IP:
-```php
-$this->get('nv.request_limit.request_restrictor')->restrictRequestByIp($userIp);
+$artifact = 'e.g. get user id or IP here';
+$this->get('nv.request_limit.restrictor')->blockBy($artifact);
 ```
 
-These will restrict user access to the action for 10 minutes.
-
-TODO
-=========
-
-1) Write tests
+These will restrict user access for a time frame specified in your configuration (5 seconds accordingly to).

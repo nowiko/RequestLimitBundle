@@ -1,12 +1,15 @@
 language: php
+
 php:
-  - 5.5
-  - 5.6
   - 7.0
   - 7.1
+  - 7.2
+  - 7.3
 
 before_script:
+  - phpenv config-add .travis-memcached.ini
+  - composer self-update
   - composer install
 
 script:
-  - vendor/bin/phpunit
+  - ./vendor/bin/phpunit

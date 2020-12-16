@@ -5,16 +5,22 @@ namespace NV\RequestLimitBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
+/**
+ * Class Configuration
+ * @package NV\RequestLimitBundle\DependencyInjection
+ * @author Novikov Viktor
+ */
 class Configuration implements ConfigurationInterface
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
+     *
+     * @return TreeBuilder
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('request_limit');
-
         $rootNode
             ->children()
                 ->integerNode('restriction_time')->end()

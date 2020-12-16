@@ -1,4 +1,12 @@
+# application configuration for tests
 framework:
     secret: test
     session:
         storage_id: session.storage.mock_file
+
+nv_request_limit:
+    provider_type: 'memcached'
+    provider_configuration:
+        server: 'localhost'
+        port: 11211
+    restriction_time: 5  # 5 seconds
