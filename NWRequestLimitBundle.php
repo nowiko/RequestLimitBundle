@@ -1,17 +1,17 @@
 <?php
 
-namespace NV\RequestLimitBundle;
+namespace NW\RequestLimitBundle;
 
-use NV\RequestLimitBundle\DependencyInjection\Compiler\StoragePass;
+use NW\RequestLimitBundle\DependencyInjection\Compiler\StoragePass;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Class NVRequestLimitBundle
- * @package NV\RequestLimitBundle
+ * Class NWRequestLimitBundle
+ * @package NW\RequestLimitBundle
  * @author Novikov Viktor
  */
-class NVRequestLimitBundle extends Bundle
+class NWRequestLimitBundle extends Bundle
 {
     /**
      * {@inheritdoc}

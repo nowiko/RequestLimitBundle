@@ -1,5 +1,5 @@
 {
-  "name" : "nv/request-limit-bundle",
+  "name" : "nw/request-limit-bundle",
   "type" : "symfony-bundle",
   "description" : "This bundle provides a light way to restrict user access to some action for a specific time frame",
   "keywords" : [
@@ -34,6 +34,6 @@
     "phpunit/phpunit": "~5.0"
   },
   "autoload" : {
-    "psr-4" : { "NV\\RequestLimitBundle\\" : "" }
+    "psr-4" : { "NW\\RequestLimitBundle\\" : "" }
   }
 }

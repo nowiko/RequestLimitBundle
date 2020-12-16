@@ -1,13 +1,13 @@
 <?php
 
-namespace NV\RequestLimitBundle\DependencyInjection;
+namespace NW\RequestLimitBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * Class Configuration
- * @package NV\RequestLimitBundle\DependencyInjection
+ * @package NW\RequestLimitBundle\DependencyInjection
  * @author Novikov Viktor
  */
 class Configuration implements ConfigurationInterface

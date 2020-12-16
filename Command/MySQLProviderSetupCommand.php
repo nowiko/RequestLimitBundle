@@ -1,6 +1,6 @@
 <?php
 
-namespace NV\RequestLimitBundle\Command;
+namespace NW\RequestLimitBundle\Command;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DBALException;
@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class MySQLProviderSetupCommand
- * @package NV\RequestLimitBundle\Command
+ * @package NW\RequestLimitBundle\Command
  * @author Novikov Viktor
  */
 class MySQLProviderSetupCommand extends ContainerAwareCommand
@@ -21,7 +21,7 @@ class MySQLProviderSetupCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('nv:request-limit:mysql-init')
+            ->setName('nw:request-limit:mysql-init')
             ->setDescription('Creates a table in your project database to store keys')
             ->setHelp('This command initializes MySQL provider workflow');
     }
@@ -37,7 +37,7 @@ class MySQLProviderSetupCommand extends ContainerAwareCommand
         /** @var Connection $connection */
         $connection = $this->getContainer()->get('doctrine.orm.default_entity_manager')->getConnection();
         $connection->exec(
-            'CREATE TABLE nv_request_limit_items (item_key VARCHAR(30) PRIMARY KEY, expires_at TIMESTAMP);'
+            'CREATE TABLE nw_request_limit_items (item_key VARCHAR(30) PRIMARY KEY, expires_at TIMESTAMP);'
         );
         $connection->close();
     }

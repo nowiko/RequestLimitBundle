@@ -1,13 +1,13 @@
 <?php
 
-namespace NV\RequestLimitBundle\Utils;
+namespace NW\RequestLimitBundle\Utils;
 
-use NV\RequestLimitBundle\Exception\RequestLimitReachedException;
-use NV\RequestLimitBundle\Storage\StorageManager;
+use NW\RequestLimitBundle\Exception\RequestLimitReachedException;
+use NW\RequestLimitBundle\Storage\StorageManager;
 
 /**
  * Class Restrictor
- * @package NV\RequestLimitBundle\Utils
+ * @package NW\RequestLimitBundle\Utils
  * @author Novikov Viktor
  */
 class Restrictor

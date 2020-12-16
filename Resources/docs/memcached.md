@@ -3,7 +3,7 @@ Configure usage of Memcached as Provider
 
 Configure `app/config/config.php`:
 ```yml
-nv_request_limit:
+nw_request_limit:
     provider_type: 'memcached'
     provider_configuration:
         server: 'localhost'

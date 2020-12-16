@@ -1,6 +1,6 @@
 <?php
 
-namespace NV\RequestLimitBundle\DependencyInjection;
+namespace NW\RequestLimitBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -9,11 +9,11 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use \Exception;
 
 /**
- * Class NVRequestLimitExtension
- * @package NV\RequestLimitBundle\DependencyInjection
+ * Class NWRequestLimitExtension
+ * @package NW\RequestLimitBundle\DependencyInjection
  * @author Novikov Viktor
  */
-class NVRequestLimitExtension extends Extension
+class NWRequestLimitExtension extends Extension
 {
     /**
      * Loads a specific configuration.
@@ -33,8 +33,8 @@ class NVRequestLimitExtension extends Extension
         $providerConfiguration = $config['provider_configuration'];
         $restrictionTime = $config['restriction_time'];
 
-        $container->setParameter('nv_request_limit.provider_type', $providerType);
-        $container->setParameter('nv_request_limit.provider_configuration', $providerConfiguration);
-        $container->setParameter('nv_request_limit.restriction_time', $restrictionTime);
+        $container->setParameter('nw_request_limit.provider_type', $providerType);
+        $container->setParameter('nw_request_limit.provider_configuration', $providerConfiguration);
+        $container->setParameter('nw_request_limit.restriction_time', $restrictionTime);
     }
 }
